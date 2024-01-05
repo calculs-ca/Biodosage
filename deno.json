@@ -1,0 +1,35 @@
+{
+  "tasks": {
+    "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable -A -",
+    "build": "deno task lume",
+    "serve": "deno task lume -s"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "npm:react",
+    "types": [
+      "lume/types.ts",
+      "https://unpkg.com/@types/react@18.2.0/index.d.ts"
+    ]
+  },
+  "imports": {
+    "lume/": "https://cdn.jsdelivr.net/gh/lumeland/lume@9f93bec0a38bb49c23dd18b2ef10d1029efbf4f0/",
+    "react-dom": "https://esm.sh/v127/*react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/v127/*react-dom@18.2.0/",
+    "react-dom/client": "https://esm.sh/v127/*react-dom@18.2.0/client",
+    "react": "https://esm.sh/v127/react@18.2.0",
+    "react/": "https://esm.sh/v127/react@18.2.0/",
+    "scheduler": "https://esm.sh/v127/scheduler@0.23.0",
+    "d3": "https://cdnjs.cloudflare.com/ajax/libs/d3/7.0.3/d3.min.js",
+    "lodash": "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+  },
+  "deploy": {
+    "project": "b9a341ea-3cd8-4960-9965-c9bdb8a58a7e",
+    "exclude": [],
+    "include": [
+      "_site",
+      "server"
+    ],
+    "entrypoint": "server/main.ts"
+  }
+}
