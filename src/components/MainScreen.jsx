@@ -116,7 +116,7 @@ const Niveau1 = ({ state, onRecommencer}) => {
         de la solution d’ADN et {varDisplay(volEau, "μl")} d’eau et les déposer dans un microtube.
 
         <br/>
-        Utilisez les actions de sélection et de glisser/déposer pour effectuer les manipulations.
+        Cliquez sur les actions indiquées par des points bleus et glisser/déposer la micropipette pour effectuer les manipulations. Le volume des micropipettes peut être modifié en cliquant sur les flèches de part et d'autre de la micropipette.
     </EnteteNiveau>
 }
 
@@ -157,7 +157,8 @@ const Niveau3 = ({ state, onRecommencer }) => {
             "Calculer la concentration d'une solution d'ADN à partir de l'absorbance mesurée"
         ]}>
         Voici votre environnement de travail. À partir du matériel mis à votre disposition, vous devez déterminer la concentration de la solution d'ADN par spectrophotométrie.
-        Le volume total dans la cuvette doit être de 1 ml. Vous devez effectuer une dilution de l’ADN purifié avant de mesurer l’absorbance de l’échantillon
+        Le volume total dans la cuvette doit être de 1 ml. Vous devez effectuer une dilution de l’ADN purifié avant de mesurer l’absorbance de l’échantillon.
+        Pour prendre la mesure de l'absorbance, faites glisser et déposer la cuvette sur le spectrophotomètre.
     </EnteteNiveau>
 }
 

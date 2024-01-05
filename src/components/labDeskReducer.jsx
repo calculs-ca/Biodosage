@@ -528,7 +528,7 @@ export const createLabDeskReducer = ({ drawTools, moveWheel, updateView, shakeFu
                 }
 
                 if (cuvette.args.content.length > 1) {
-                    return returnErrorDialog(state, `La référence (aussi nommée blanc) est utilisée pour faire le zéro de l'appareil. Il doit contenir tout ce que l’échantillon contient, sauf la substance à mesurer. Dans ce cas-ci, il doit donc contenir de l’eau.`)
+                    return returnErrorDialog(state, `La référence (aussi nommée blanc) est utilisée pour faire le zéro de l'appareil. Elle doit contenir tout ce que l’échantillon contient, sauf la substance à mesurer. Dans ce cas-ci, elle doit donc contenir de l’eau.`)
                 }
 
                 if (cuvette.args.content.length === 0 || !_.find(cuvette.args.content, c => c.contentSourceId === 'water-tube')) {
