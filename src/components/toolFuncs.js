@@ -2,11 +2,6 @@ import * as d3 from "d3"
 import { niveaux } from "./niveaux.js"
 import _ from 'lodash'
 
-//import map from "lodash/fp/map";
-//import groupBy from "lodash/fp/groupBy";
-//import values from "lodash/fp/values";
-//import flow from "lodash/fp/flow";
-
 
 export const toolFuncs = (state, failSafe = false) => {
 
@@ -114,12 +109,12 @@ export const toolFuncs = (state, failSafe = false) => {
             return workTubeOrCuvette.args.content
         }
 
-        const content = [...workTubeOrCuvette.args.content, { ...pipette.args.content }]
+        const content = [...workTubeOrCuvette.args.content, { ...pipette.args.content }]        
 
-        const res = flow(
-            groupBy(c => c.contentSourceId),
-            values(),
-            map(c => {
+        const res = _.chain(content)
+            .groupBy(c => c.contentSourceId)
+            .values()
+            .map(c => {
                 const [c1, c2] = c
                 if(!c2) {
                     return c1
@@ -128,8 +123,7 @@ export const toolFuncs = (state, failSafe = false) => {
                     contentSourceId: c1.contentSourceId,
                     volume: c1.volume + c2.volume
                 }
-            })
-        )(content)
+            }).value()
 
         return res
     }
