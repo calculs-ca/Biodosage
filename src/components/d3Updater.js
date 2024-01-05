@@ -305,6 +305,8 @@ const drawPipette = (svgScreen, dispatch, toolId, { wheelRanges, wheelValues, id
 
     const pipetteGroup = svgScreen.append("g")
 
+    pipetteGroup.raise()
+
     pipetteGroup.attr("id", toolId)
 
     pipetteGroup.append("text")
@@ -568,6 +570,8 @@ const drawTube = (svgScreen, dispatch, toolId, { width, height, label, labelOffs
         .attr("clip-path", `url(#${tubePathId})`)
 
     toolMouseHandler(tubeGroup, toolId, dispatch)
+
+    tubeGroup.lower()
 
     return tubeGroup
 }
