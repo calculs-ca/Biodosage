@@ -320,9 +320,22 @@ export const createLabDeskReducer = ({ drawTools, moveWheel, updateView, shakeFu
 
             case "drag": {
 
+
                 const state1 = {
                     ...state,
                     toolsModels: state.toolsModels.map(tool => {
+
+                        const newX = tool.x + action.event.dx
+                        const newY = tool.y + action.event.dy
+        
+                        if(newX < 20 || newX > 1100) {
+                            return tool
+                        }
+
+                        if(newY < -50 || newY > 400) {
+                            return tool
+                        }                        
+        
 
                         if (state.draggingToolId !== tool.id) {
                             return tool
@@ -330,8 +343,8 @@ export const createLabDeskReducer = ({ drawTools, moveWheel, updateView, shakeFu
 
                         return {
                             ...tool,
-                            x: tool.x + action.event.dx,
-                            y: tool.y + action.event.dy
+                            x: newX,
+                            y: newY
                         }
 
                     })
