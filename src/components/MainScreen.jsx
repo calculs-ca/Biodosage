@@ -288,7 +288,11 @@ export const MainScreen = () => {
                 >
                     Allez au niveau {nextNiveau()}
                 </button>
-            }
+                
+                }
+                {
+                    labDesk.niveauNum == 3 && <div>Bravo, vous avez terminé avec succès les exercices.</div>
+                }
             </div>
         }
 
