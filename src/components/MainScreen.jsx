@@ -499,6 +499,7 @@ export const MainScreen = () => {
                     <Recommencer/>
                         Recommencer
                     </a>
+                    <p>Si vous ne voyez pas l'ensemble de la page, vous pouvez cliquer sur "Ctrl" et "-" (signe moins) pour diminuer la taille de l'affichage</p>
                     <div id="topSvg" ref={svgParent}></div>
                 </div>
                 <div className={`column is-one-${labDeskFuncs.isNiveau(2) ? "fourth" : "fifth"}`}>
