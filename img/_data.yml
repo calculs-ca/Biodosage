@@ -1,8 +1,0 @@
-
-
-transformImages:
-  resize: [50, 50]
-  format: [png]
-  
-
-#P1000_piston.png  P200_piston.png  P20_piston.png
